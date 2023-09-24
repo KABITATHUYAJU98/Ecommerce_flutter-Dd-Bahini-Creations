@@ -1,5 +1,5 @@
 import 'package:ecommerce_flutter/constants/theme.dart';
-import 'package:ecommerce_flutter/screens/auth_ui/login/welcome.dart';
+import 'package:ecommerce_flutter/screens/auth_ui/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 
 void main() {

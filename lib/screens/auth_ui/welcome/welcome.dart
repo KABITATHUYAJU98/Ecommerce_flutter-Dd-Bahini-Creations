@@ -1,4 +1,6 @@
 import 'package:ecommerce_flutter/constants/asset_images.dart';
+import 'package:ecommerce_flutter/constants/routes.dart';
+import 'package:ecommerce_flutter/screens/auth_ui/login/login.dart';
 import 'package:ecommerce_flutter/widgets/primary_button/primary_button.dart';
 import 'package:ecommerce_flutter/widgets/top_titles/top_titles.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,13 +14,14 @@ class Welcome extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const TopTitles(title: "Welcome!!", subTitle: "Buy your favourite item here!!"),
-          Center(
-              child: Image.asset(
-            AssetsImages.instance.welcomeImage,
-          )),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          const TopTitles(
+              title: "Welcome!!", subTitle: "Buy your favourite item here!!"),
+          Center(child: Text('here is an image')
+              //     Image.asset(
+              //   AssetsImages.instance.welcomeImage,
+              // )
+              ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -42,12 +45,14 @@ class Welcome extends StatelessWidget {
                   ),
             ],
           ),
-
-          const SizedBox(height: 30),          
-          PrimaryButton(title: "Login", onPressed: (){}),
+          const SizedBox(height: 30),
+          PrimaryButton(
+              title: "Login",
+              onPressed: () {
+                Routes.instance.push(widget: const Login(), context: context);
+              }),
           const SizedBox(height: 18),
-          PrimaryButton(title: "Sign Up", onPressed: (){})
-         
+          PrimaryButton(title: "Sign Up", onPressed: () {})
         ]),
       ),
     );
